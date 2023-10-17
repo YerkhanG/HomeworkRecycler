@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">HomeworkRecycler</string>
+    <string name= "fi">Junior UX Designer</string>
+    <string name= "sec">Junior Product Designer</string>
+    <string name= "thi">Middle motion Designer</string>
+    <string name= "fo">Junior Android developer</string>
+    <string name= "fif">Middle Android developer</string>
+    <string name= "six">Junior UX Designer</string>
+    <string name="android">Android</string>
+    <string name = "designer">Designer</string>
 </resources>
