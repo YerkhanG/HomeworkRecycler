@@ -11,10 +11,11 @@ import com.example.homeworkrecycler.databinding.ItemSpecsBinding
 class JobsListAdapter (
     private val items: List<JobsListDto>
 ) : RecyclerView.Adapter<BaseJobsViewHolder<*, String>>() {
+    var itemClick : ((String) -> Unit )? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
-        viewType: Int
+        viewType: Int,
     ): BaseJobsViewHolder<*, String> {
         return when (viewType) {
             JobsListType.SPECS_VIEW.ordinal -> HeaderViewHolder(
@@ -23,10 +24,10 @@ class JobsListAdapter (
                 )
             )
 
-            JobsListType.JOBS_VIEW.ordinal -> CountryViewHolder(
+            JobsListType.JOBS_VIEW.ordinal -> JobsViewHolder(
                 ItemJobsBinding.inflate(
                     LayoutInflater.from(parent.context), parent, false
-                )
+                ) , itemClick
             )
 
             else -> SpacingViewHolder(
@@ -47,12 +48,16 @@ class JobsListAdapter (
         return items[position].viewType.ordinal
     }
 
-    class CountryViewHolder(override val binding: ItemJobsBinding) :
+    class JobsViewHolder(override val binding: ItemJobsBinding, private val click: ((String) -> Unit)?) :
         BaseJobsViewHolder<ItemJobsBinding, String>(binding) {
 
         override fun bindView(item: String) {
             binding.title.text = item
+            itemView.setOnClickListener{
+                click?.invoke(item)
+            }
         }
+
     }
 
     class HeaderViewHolder(override val binding: ItemSpecsBinding) :

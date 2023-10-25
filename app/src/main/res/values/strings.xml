@@ -6,6 +6,15 @@
     <string name= "fo">Junior Android developer</string>
     <string name= "fif">Middle Android developer</string>
     <string name= "six">Junior UX Designer</string>
+    <string name= "sev">Junior IOS Dev</string>
+    <string name= "eig">Senior UX Designer</string>
+    <string name= "nin">Senior IOS Dev</string>
+    <string name= "ten">Senior Android Dev</string>
+
     <string name="android">Android</string>
     <string name = "designer">Designer</string>
+    <string name="ios">IOS</string>
+    <string name="back">Backend</string>
+    <string name="test">Testing Dep</string>
+
 </resources>

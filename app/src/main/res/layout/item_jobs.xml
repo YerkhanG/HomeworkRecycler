@@ -8,6 +8,7 @@
     app:cardCornerRadius="16dp"
     app:cardElevation="2dp">
     <FrameLayout
+        android:id="@+id/item_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
